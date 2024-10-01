@@ -1,0 +1,27 @@
+.sidebar {
+  width: 320px;
+  min-height: 100vh;
+  background-color: #312f2f;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #fff;
+  text-align: center;
+  padding-top: 100px;
+  padding-right: 30px;
+}
+.sidebar .links {
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 12px;
+  padding: 12px 36px;
+  color: #fff;
+  align-items: center;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.sidebar .active {
+  color: #111;
+  background-color: #fff;
+  border-left: 4px solid #47f00a;
+}
