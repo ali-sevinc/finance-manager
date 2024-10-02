@@ -42,8 +42,31 @@
   background-color: green;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .overviewBody {
-    grid-template-columns: repeat(7, minmax(100px, auto));
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "pt pt pt pt"
+      "pt pt pt pt"
+      "pt pt pt pt"
+      "bg bg bg bg"
+      "bg bg bg bg"
+      "bg bg bg bg"
+      "bg bg bg bg"
+      "bg bg bg bg"
+      "bg bg bg bg"
+      "tr tr tr tr"
+      "tr tr tr tr"
+      "tr tr tr tr"
+      "tr tr tr tr"
+      "tr tr tr tr"
+      "tr tr tr tr"
+      "rb rb rb rb"
+      "rb rb rb rb"
+      "rb rb rb rb";
+  }
+  .overview {
+    width: 96%;
   }
 }

@@ -1,0 +1,23 @@
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background-color: #1c1c1c;
+}
+
+.navMenu .links {
+  display: flex;
+  font-size: 24px;
+  font-weight: 500;
+  gap: 12px;
+  padding: 12px 36px;
+  color: #fff;
+  align-items: center;
+  border-radius: 12px;
+}
+.navMenu .active {
+  color: #111;
+  background-color: #fff;
+}
