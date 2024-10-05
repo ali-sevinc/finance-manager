@@ -10,9 +10,15 @@
 }
 .navMenuContainer {
   display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .contentContainer {
   flex: 1;
+  margin-bottom: 90px;
 }
 
 @media (min-width: 1024px) {
@@ -23,10 +29,10 @@
   .sidebarContainer {
     display: block;
   }
-}
-
-@media (min-width: 1024px) {
   .navMenuContainer {
     display: none;
+  }
+  .contentContainer {
+    margin-bottom: 0;
   }
 }

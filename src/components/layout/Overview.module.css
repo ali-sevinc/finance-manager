@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 90%;
+  width: 95%;
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
@@ -27,19 +27,15 @@
 }
 .pots {
   grid-area: pt;
-  background-color: red;
 }
 .transactions {
   grid-area: tr;
-  background-color: orange;
 }
 .budgets {
   grid-area: bg;
-  background-color: yellow;
 }
 .recurringBills {
   grid-area: rb;
-  background-color: green;
 }
 
 @media (max-width: 1024px) {
@@ -67,6 +63,6 @@
       "rb rb rb rb";
   }
   .overview {
-    width: 96%;
+    width: 98%;
   }
 }
