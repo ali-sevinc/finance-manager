@@ -3,7 +3,8 @@
   flex-direction: column;
   gap: 20px;
   width: 95%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -36,6 +37,67 @@
 }
 .recurringBills {
   grid-area: rb;
+}
+.balance {
+  display: flex;
+  gap: 16px;
+}
+.balance p {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.pot {
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  gap: 12px;
+}
+
+.total {
+  display: flex;
+  background-color: rgb(237, 230, 209);
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+}
+.divider {
+  background-color: black;
+  height: 100%;
+}
+.total span {
+  font-size: 48px;
+}
+.total div {
+  font-size: 24px;
+}
+.otherPots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+}
+.otherPots div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 3px solid black;
+  height: 100%;
+  padding: 4px;
+}
+.otherPots h4 {
+  color: grey;
+}
+
+@media (max-width: 720px) {
+  .balance {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1024px) {

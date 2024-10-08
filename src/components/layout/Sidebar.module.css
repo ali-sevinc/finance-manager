@@ -9,6 +9,12 @@
   padding-top: 100px;
   padding-right: 30px;
 }
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .sidebar .links {
   display: flex;
   font-size: 18px;

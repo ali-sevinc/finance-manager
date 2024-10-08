@@ -1,0 +1,91 @@
+[
+  {
+    "users": [
+      { "userId": 1, "name": "Ali", "img": "" },
+      { "userId": 2, "name": "Veli", "img": "" }
+    ],
+    "data": [
+      {
+        "userId": 1,
+        "balance": [{ "current": 3750, "income": 2920, "expenses": 1270 }],
+        "pots": [
+          {
+            "savings": 123,
+            "gift": 12,
+            "concert_ticked": 75,
+            "new_laptop": 35,
+            "total_saved": 776
+          }
+        ],
+        "budgets": [
+          {
+            "entertainmet": 50,
+            "bills": 1000,
+            "dining_out": 100,
+            "personal_care": 100
+          }
+        ],
+        "transactions": [
+          {
+            "transactions": [
+              {
+                "id": 1,
+                "status": "income",
+                "person": "Ali",
+                "amount": 100,
+                "create_at": "Oct 08 2024"
+              },
+              {
+                "id": 2,
+                "status": "expense",
+                "person": "Ali",
+                "amount": 100,
+                "img": "",
+                "create_at": "08.10.2024"
+              },
+              {
+                "id": 3,
+                "status": "expense",
+                "person": "Ali",
+                "amount": 100,
+                "img": "",
+                "create_at": "08.10.2024"
+              },
+              {
+                "id": 4,
+                "status": "income",
+                "person": "Ali",
+                "amount": 100,
+                "img": "",
+                "create_at": "07.10.2024"
+              },
+              {
+                "id": 5,
+                "status": "expense",
+                "person": "Ali",
+                "amount": 100,
+                "img": "",
+                "create_at": "06.10.2024"
+              },
+              {
+                "id": 6,
+                "status": "income",
+                "person": "Ali",
+                "amount": 100,
+                "img": "",
+                "create_at": "05.10.2024"
+              }
+            ]
+          }
+        ],
+        "recurringBills": [
+          {
+            "paid_bills": 200,
+            "total_upcoming": 423,
+            "due_soon": 87
+          }
+        ]
+      }
+    ]
+  }
+]
