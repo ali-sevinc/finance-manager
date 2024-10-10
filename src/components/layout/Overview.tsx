@@ -50,7 +50,6 @@ export default function Overview({ data }: PropsType) {
                     <p>{data.data.pots[0].total_saved}</p>
                   </div>
                 </div>
-                <div className={styles.divider} />
                 <div className={styles.otherPots}>
                   <div>
                     <h4>Savings</h4>
