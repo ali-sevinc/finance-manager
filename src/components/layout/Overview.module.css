@@ -10,7 +10,7 @@
 }
 .overviewBody {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(7, 1fr);
@@ -20,6 +20,12 @@
     "tr tr tr tr bg bg bg"
     "tr tr tr tr rb rb rb";
 }
+
+.overview h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
 .pots {
   grid-area: pt;
 }
@@ -45,6 +51,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-content: center;
   justify-content: space-around;
   min-height: 100%;
   width: 100%;
@@ -54,6 +61,8 @@
 
 .total {
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--bone-300);
   height: 100%;
   width: 100%;
@@ -83,6 +92,40 @@
 }
 .otherPots h4 {
   color: grey;
+}
+
+.transactions ul {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  gap: 4px;
+}
+.transactions li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.transactions ul > *:not(:last-child) {
+  border-bottom: 2px solid var(--zinc-300);
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date {
+  color: gray;
+  font-size: 12px;
+}
+.income {
+  color: green;
+}
+.expense {
+  color: red;
 }
 
 @media (max-width: 720px) {
@@ -117,5 +160,19 @@
   }
   .overview {
     width: 98%;
+  }
+}
+
+@media (max-width: 680px) {
+  .total {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .total span {
+    font-size: 32px;
+  }
+  .total div {
+    font-size: 18px;
+    text-align: center;
   }
 }

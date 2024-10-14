@@ -5,6 +5,7 @@ import Heading from "../ui/Heading";
 import { FaSackDollar } from "react-icons/fa6";
 
 import styles from "./Overview.module.css";
+import { ReactNode } from "react";
 
 type PropsType = {
   data: DataType;
@@ -79,7 +80,32 @@ export default function Overview({ data }: PropsType) {
         </div>
         <div className={styles.transactions}>
           <Card text="View All" href="transactions">
-            Trancations
+            <h2>Transactions</h2>
+            <ul>
+              {data.data.transactions.map((transaction, i) => {
+                if (i > 4) return null;
+                let status: ReactNode = (
+                  <div className={styles.status}>
+                    <p className={styles.income}>+{transaction.amount}</p>
+                    <p className={styles.date}>{transaction.create_at}</p>
+                  </div>
+                );
+                if (transaction.status === "expense") {
+                  status = (
+                    <div className={styles.status}>
+                      <p className={styles.expense}>-{transaction.amount}</p>
+                      <p className={styles.date}>{transaction.create_at}</p>
+                    </div>
+                  );
+                }
+                return (
+                  <li key={transaction.id}>
+                    <p>{transaction.person}</p>
+                    {status}
+                  </li>
+                );
+              })}
+            </ul>
           </Card>
         </div>
         <div className={styles.recurringBills}>
