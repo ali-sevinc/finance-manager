@@ -21,11 +21,8 @@ export type Pot = {
 };
 
 export type Budget = {
-  userId: number;
-  entertainment: number;
-  bills: number;
-  dining_out: number;
-  personal_care: number;
+  name: string;
+  value: number;
 };
 
 export type Transaction = {

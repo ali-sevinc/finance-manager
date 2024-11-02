@@ -1,0 +1,49 @@
+.pots {
+  grid-area: pt;
+}
+.pot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  min-height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  gap: 12px;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bone-300);
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.total span {
+  font-size: 48px;
+}
+.total div {
+  font-size: 24px;
+}
+.otherPots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+}
+.otherPots div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 3px solid var(--cyan);
+  height: 100%;
+  padding: 4px;
+}
+.otherPots h4 {
+  color: grey;
+}

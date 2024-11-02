@@ -1,0 +1,14 @@
+.balance {
+  display: flex;
+  gap: 16px;
+}
+.balance p {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .balance {
+    flex-direction: column;
+  }
+}

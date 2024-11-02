@@ -17,13 +17,17 @@
             "total_saved": 776
           }
         ],
-        "budgets": [
+        "budget": [
           {
-            "entertainmet": 50,
-            "bills": 1000,
-            "dining_out": 100,
-            "personal_care": 100
-          }
+            "name": "entertainmet",
+            "value": 50
+          },
+          {
+            "name": "bills",
+            "value": 1000
+          },
+          { "name": "dining_out", "value": 100 },
+          { "name": "personal_care", "value": 100 }
         ],
         "transactions": [
           {

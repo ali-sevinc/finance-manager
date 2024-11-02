@@ -2,80 +2,38 @@ import { DataType } from "../../lib/types";
 import Card from "../ui/Card";
 import Heading from "../ui/Heading";
 
-import { FaSackDollar } from "react-icons/fa6";
-
 import styles from "./Overview.module.css";
 import { ReactNode } from "react";
+
+import OverviewPots from "./overview/OverviewPots";
+import OverviewBalance from "./overview/OverviewBalance";
+import OverviewBudget from "./overview/OverviewBudget";
 
 type PropsType = {
   data: DataType;
 };
+
+function formatDate(dateString: string) {
+  const [day, month, year] = dateString.split(".");
+  const date = new Date(+year, +month - 1, +day);
+  return date.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
 
 export default function Overview({ data }: PropsType) {
   console.log(data);
   return (
     <div className={styles.overview}>
       <Heading>OVERVIEW</Heading>
-      <div className={styles.balance}>
-        <Card>
-          <div>
-            <h2>Current Balance</h2>
-            <p>$ {data.data.balance[0].current}</p>
-          </div>
-        </Card>
-        <Card>
-          <div>
-            <h2>Income</h2>
-            <p>$ {data.data.balance[0].income}</p>
-          </div>
-        </Card>
-        <Card>
-          <div>
-            <h2>Expenses</h2>
-            <p>$ {data.data.balance[0].expenses}</p>
-          </div>
-        </Card>
-      </div>
+      <OverviewBalance data={data.data.balance} />
       <div className={styles.overviewBody}>
-        <div className={styles.pots}>
-          <Card text="See Details" href="pots">
-            <div>
-              <h2>Pots</h2>
-              <div className={styles.pot}>
-                <div className={styles.total}>
-                  <span>
-                    <FaSackDollar />
-                  </span>
-                  <div>
-                    <p>Total Saved</p>
-                    <p>{data.data.pots[0].total_saved}</p>
-                  </div>
-                </div>
-                <div className={styles.otherPots}>
-                  <div>
-                    <h4>Savings</h4>
-                    <p>{data.data.pots[0].savings}</p>
-                  </div>
-                  <div>
-                    <h4>Gift</h4>
-                    <p>{data.data.pots[0].gift}</p>
-                  </div>
-                  <div>
-                    <h4> Concert Ticket</h4>
-                    <p>{data.data.pots[0].concert_ticked}</p>
-                  </div>
-                  <div>
-                    <h4>New Laptop</h4>
-                    <p>{data.data.pots[0].new_laptop}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
+        <OverviewPots data={data.data.pots} />
         <div className={styles.budgets}>
           <Card text="See Details" href="budgets">
-            Budget
+            <OverviewBudget data={data.data.budget} />
           </Card>
         </div>
         <div className={styles.transactions}>
@@ -87,14 +45,18 @@ export default function Overview({ data }: PropsType) {
                 let status: ReactNode = (
                   <div className={styles.status}>
                     <p className={styles.income}>+{transaction.amount}</p>
-                    <p className={styles.date}>{transaction.create_at}</p>
+                    <p className={styles.date}>
+                      {formatDate(transaction.create_at)}
+                    </p>
                   </div>
                 );
                 if (transaction.status === "expense") {
                   status = (
                     <div className={styles.status}>
                       <p className={styles.expense}>-{transaction.amount}</p>
-                      <p className={styles.date}>{transaction.create_at}</p>
+                      <p className={styles.date}>
+                        {formatDate(transaction.create_at)}
+                      </p>
                     </div>
                   );
                 }
