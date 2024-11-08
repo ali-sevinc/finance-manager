@@ -9,6 +9,7 @@ import {
 
 import styles from "./OverviewBudget.module.css";
 import { Budget } from "../../../lib/types";
+import { useEffect, useState } from "react";
 
 const COLORS = ["#3f3f46", "#b91c1c", "#4d7c0f", "#0369a1"];
 
@@ -34,7 +35,28 @@ function legendContent(payload: Budget[]) {
 }
 
 export default function OverviewBudget({ data }: { data: Budget[] }) {
-  console.log(data);
+  // console.log(data);
+  const [legendPosition, setLegendPosition] = useState<"left" | "top">("left");
+
+  // console.log("Re-Render");
+
+  useEffect(function () {
+    let pageWidth = window.innerWidth;
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        pageWidth = entry.contentRect.width;
+        if ((pageWidth <= 1500 && pageWidth > 1024) || pageWidth < 450) {
+          setLegendPosition("top");
+        } else {
+          setLegendPosition("left");
+        }
+        // console.log(pageWidth);
+      }
+    });
+    resizeObserver.observe(document.body);
+
+    return () => resizeObserver.disconnect();
+  }, []);
 
   return (
     <div className={styles.budget}>
@@ -46,8 +68,8 @@ export default function OverviewBudget({ data }: { data: Budget[] }) {
             nameKey="name"
             cx="50%"
             cy="50%"
-            innerRadius={50}
-            outerRadius={90}
+            innerRadius="60%"
+            outerRadius="95%"
             fill="#82ca9d"
           >
             {data.map((entry, index) => (
@@ -58,9 +80,9 @@ export default function OverviewBudget({ data }: { data: Budget[] }) {
             ))}
           </Pie>
           <Legend
-            verticalAlign="top"
-            iconType="circle"
-            align="center"
+            verticalAlign={legendPosition === "left" ? "middle" : "top"}
+            align={legendPosition === "left" ? "left" : "center"}
+            width={180}
             content={() => legendContent(data)}
           />
           <Tooltip />
